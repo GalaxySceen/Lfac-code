@@ -1,0 +1,10 @@
+The program is correct!
+Variables:
+Name: y, Type: int
+Name: Ax12, Type: float
+Name: p, Type: bool
+Name: a, Type: string
+Name: b, Type: int
+Name: c, Type: int
+Name: d, Type: int
+Name: t, Type: string
