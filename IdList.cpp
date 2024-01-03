@@ -1,12 +1,29 @@
 #include <iostream>
 #include "IdList.h"
+#include <cstring>
+#include <stdbool.h>
 using namespace std;
 
-void IdList::addVar(const char* type, const char* name)
- {
-    types.push_back(string(type));
-    names.push_back(string(name));
+void IdList::addVar(const char* type, const char* name, const char* isconst, const char* value, const char* where) 
+{
+    // Add the type, name, and isConst information
+    types.push_back(type);
+    names.push_back(name);
+    isConst.push_back(isconst);
+    whereisdefined.push_back(where);
+    if (strcmp(type, "int") == 0) 
+        values.push_back(to_string(atoi(value))); 
+    else if (strcmp(type, "char") == 0 || strcmp(type, "string") == 0) 
+    {
+        values.push_back(value);
+    } 
+    else if (strcmp(type, "bool") == 0) 
+    {
+        if (strcmp(value, "true") == 0 || strcmp(value, "false") == 0) 
+            values.push_back(value);
+    } 
 }
+
 
 bool IdList::existsVar(const char* s) 
 {
@@ -19,13 +36,37 @@ bool IdList::existsVar(const char* s)
     return false;
 }
 
-void IdList::printVars()
+void IdList::printVars()  
 {
     for (size_t i = 0; i < names.size(); ++i) {
-         cout<< "Name: " << names[i] << ", Type: " << types[i] << endl;
+        cout << "Name: " << names[i] << ", Type: " << (isConst[i] == "true" ? "const " : "") << types[i] << ", Value: " << values[i] << ", Defined: " << whereisdefined[i] << endl;
     }
 }
 
+bool IdList::checkVarType(const string& type, const string& id, const string& expr)
+{
+    size_t index = 0;
+    bool variableFound = false;
+
+    for (; index < names.size(); ++index) {
+        if (id == names[index]) {
+            variableFound = true;
+            break;
+        }
+    }
+
+    if (!variableFound) {
+        cout << "Variable " << id << " not declared." << endl;
+        return false;
+    }
+
+    if (types[index] != expr) {
+        cout << "Type mismatch for variable " << id << ". Expected type: " << types[index] << ", Actual type: " << expr << endl;
+        return false;
+    }
+
+    return true;
+}
 
 IdList::~IdList() 
 {
