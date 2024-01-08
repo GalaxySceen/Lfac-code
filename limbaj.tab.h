@@ -52,12 +52,13 @@ extern int yydebug;
     BGIN = 258,
     END = 259,
     ASSIGN = 260,
-    NR = 261,
-    NRNEG = 262,
-    FLOAT = 263,
-    CONST = 264,
-    ID = 265,
-    TYPE = 266
+    CONST = 261,
+    BOOL = 262,
+    BOOLRESPONSE = 263,
+    NR = 264,
+    FLOAT = 265,
+    ID = 266,
+    TYPE = 267
   };
 #endif
 
@@ -65,12 +66,13 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 14 "limbaj.y"
+#line 17 "limbaj.y"
 
     char* string;
     int intValue;
+    float floatValue; 
 
-#line 74 "limbaj.tab.h"
+#line 76 "limbaj.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
