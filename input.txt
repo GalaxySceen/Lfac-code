@@ -1,14 +1,20 @@
-int y(int z);
-float Ax12;
-bool p;
+int b;
 string a();
-int b[];
+int y(int z);
+const int x = 712;
 int c[100][100][10];
 int d[][][];
-int x=15; 
 string t[100];
-
+int h=15;
+int u;
+struct point
+{ 
+int e=20;
+int a;
+};
+int t(string f);
 begin_progr
-y(15);
+if(1==2)
+	u=2;
 
 end_progr
