@@ -1,10 +1,17 @@
 The program is correct!
 Variables:
-Name: y, Type: int
-Name: Ax12, Type: float
-Name: p, Type: bool
-Name: a, Type: string
-Name: b, Type: int
-Name: c, Type: int
-Name: d, Type: int
-Name: t, Type: string
+Name: b, Type: int, Value: 0, Defined: global
+Name: r, Type: int, Value: undefined, Defined: Parameter to function a
+Name: a, Type: Function string, Value: is ambiguous, Defined: global
+Name: z, Type: int, Value: undefined, Defined: Parameter to function y
+Name: y, Type: Function int, Value: is ambiguous, Defined: global
+Name: x, Type: const int, Value: 712, Defined: global
+Name: c, Type: Array of int, Value: is ambiguous, Defined: global
+Name: d, Type: Array of int, Value: is ambiguous, Defined: global
+Name: t, Type: Array of string, Value: is ambiguous, Defined: global
+Name: h, Type: int, Value: 15, Defined: global
+Name: u, Type: int, Value: 0, Defined: global
+Name: e, Type: int, Value: 20, Defined: Variable of struct point
+Name: a, Type: int, Value: undefined, Defined: Variable of struct point
+Name: point, Type: struct, Value: is ambiguous, Defined: global
+Name: f, Type: string, Value: undefined, Defined: Parameter to function t
